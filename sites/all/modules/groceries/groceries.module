@@ -40,16 +40,14 @@
         );
 
         $output = "";
+        $total = 0;
         foreach($my_groceries as $key => $value) {
-            $output .= ("<p> $key </p>");
+            $total = $total + $value['price'] * $value['quantity'];
+            $output .= ("<p>" . $value['quantity'] . " " . $value['name'] . " - " . "$" . $value['price'] . "</p>");
+            $output .= 'Total: ' . "$" . $total;
+
         }
         return $output;
 
-        // foreach ($my_groceries as $grocery_item => $item_name) {
-        //         echo "<p> $grocery_item </p>";
-        //         foreach ($my_groceries[$grocery_item]['price'] as $grocery_values) {
-        //             echo "<p> $grocery_values </p>";
-        //         }
-        //     }
 
     }
