@@ -1,0 +1,56 @@
+<?php
+
+    $GLOBALS['favorites'] = array(
+        'Movies' => array(
+            'Zoolander',
+            'The Life Aquatic',
+            'Madagascar'
+        ),
+        'Books' => array(
+            'Where the Wild Things Are',
+            'The Polar Express',
+            'Modern Romance'
+        ),
+        'Songs' => array(
+            'The Macarena',
+            'Thriller',
+            'Little Red Corvette'
+        )
+    );
+
+    function favorites_menu() {
+        $items = array();
+        foreach ( $GLOBALS['favorites'] as $favorite => $name) {
+            $items['favorites/' . $favorite] = array(
+                'title' => 'My Favorite ' . $favorite,
+                'page callback' => 'favorites_callback_' . $favorite,
+                'access callback' => TRUE,
+                'type' => MENU_NORMAL_ITEM,
+            );
+        }
+        return $items;
+    }
+
+    function favorites_callback_movies() {
+        $output = "";
+        foreach ($GLOBALS['favorites']['Movies'] as $value) {
+            $output .= '<h2>' . $value . '</h2>';
+        }
+        return $output;
+    }
+
+    function favorites_callback_books() {
+        $output = "";
+        foreach ($GLOBALS['favorites']['Books'] as $value) {
+            $output .= '<h2>' . $value . '</h2>';
+        }
+        return $output;
+    }
+
+    function favorites_callback_songs() {
+        $output = "";
+        foreach ($GLOBALS['favorites']['Songs'] as $value) {
+            $output .= '<h2>' . $value . '</h2>';
+        }
+        return $output;
+    }
