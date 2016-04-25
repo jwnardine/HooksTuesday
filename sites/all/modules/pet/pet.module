@@ -1,0 +1,31 @@
+<?php
+
+function pet_menu() {
+    $items = array();
+    $items['my_favorite_pet'] = array(
+        'title' => 'My Favorite Pet',
+        'page callback' => 'pet_callback',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+
+    );
+    $items['image'] = array(
+
+    );
+    return $items;
+}
+
+function pet_callback() {
+    return "
+    <h1>Coda is my favorite pet</h1>
+    <h3>Here's why:</h3>
+    <ul>
+        <li>He is the cutest</li>
+        <li>He has 4 legs and a tail</li>
+        <li> He has the sweetest eyes in the world</li>
+        <li>Based on his proportions, he is a really good cuddler :3</li>
+        <li><img src='sites/all/modules/pet/coda.png'></li>
+
+    </ul>
+    ";
+}
