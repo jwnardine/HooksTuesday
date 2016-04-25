@@ -1,0 +1,37 @@
+<?php
+
+function cards_menu() {
+    $items = array();
+    $friends = array("John", "Jared", "Jacob");
+    foreach ($friends as $friend) {
+        $items['cards/' . $friend] = array(
+            'title' => 'Card for ' .$friend,
+            'page callback' => 'cards_callback_' . $friend,
+            'access arguments' => array('access content'),
+        );
+    }
+    return $items;
+}
+
+function cards_callback_john(){
+    $content['raw_markup'] = array(
+        '#type' => 'markup',
+        '#markup' => '<p>Hey John! Have a great day, pal!</p>',
+    );
+    return $content;
+}
+
+function cards_callback_jared(){
+    $content['raw_markup'] = array(
+        '#type' => 'markup',
+        '#markup' => '<p>Hey Jared! Have a great day, pal!</p>',
+    );
+    return $content;
+}
+function cards_callback_jacob(){
+    $content['raw_markup'] = array(
+        '#type' => 'markup',
+        '#markup' => '<p>Hey Jacob! Have a great day, pal!</p>',
+    );
+    return $content;
+}
