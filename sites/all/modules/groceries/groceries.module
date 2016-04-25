@@ -1,0 +1,55 @@
+<?php
+    function groceries_menu() {
+        $items = array();
+        $items['groceries_list'] = array(
+            'title' => 'Groceries',
+            'page callback' => 'groceries_callback',
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
+        return $items;
+    }
+
+
+
+    function groceries_callback() {
+        $my_groceries['eggs'] = array(
+            'name' => 'eggs',
+            'price' => 1.99,
+            'quantity' => 3,
+        );
+        $my_groceries['chocolate'] = array(
+            'name' => 'chocolate',
+            'price' => 4.99,
+            'quantity' => 1
+        );
+        $my_groceries['coffee'] = array(
+            'name' => 'coffee',
+            'price' => 10.99,
+            'quantity' => 1
+        );
+        $my_groceries['cheese'] = array(
+            'name' => 'cheese',
+            'price' => 7.99,
+            'quantity' => 2
+        );
+        $my_groceries['bread'] = array(
+            'name' => 'bread',
+            'price' => 2.99,
+            'quantity' => 2
+        );
+
+        $output = "";
+        foreach($my_groceries as $key => $value) {
+            $output .= ("<p> $key </p>");
+        }
+        return $output;
+
+        // foreach ($my_groceries as $grocery_item => $item_name) {
+        //         echo "<p> $grocery_item </p>";
+        //         foreach ($my_groceries[$grocery_item]['price'] as $grocery_values) {
+        //             echo "<p> $grocery_values </p>";
+        //         }
+        //     }
+
+    }

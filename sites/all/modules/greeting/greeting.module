@@ -22,4 +22,5 @@
 
  function say_farewell() {
      return '<p>Fare thee well my dear friend! ;)</p>';
+
  }

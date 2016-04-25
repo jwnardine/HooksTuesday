@@ -2,4 +2,4 @@ name = Pet
 description = My favorite Pet
 package = Epicodus Examples
 core = 7.x
-files[] = pet.module, coda.png
+files[] = pet.module
